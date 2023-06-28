@@ -12,8 +12,6 @@ img {
     border: 1px dotted black;
 }
 
-
-
 .titular {
     margin-top: 1%;
 }
@@ -32,36 +30,27 @@ img {
     flex-wrap: wrap;
 }
 
-
-
 .flexContainer>* {
-
     width: 100%;
-
 }
 
 /*IPAD, que dejo también con tres*/
 @media screen and (min-width: 768px) {
     .flexContainer {
         flex-wrap: nowrap;
-
     }
 
     .flexContainer>* {
         width: 33%;
-
-
     }
 }
 
 @media screen and (min-width: 922px) {
     .flexContainer {
         flex-wrap: nowrap;
-
     }
 
     .flexContainer>* {
         width: 33%;
-
     }
 }
