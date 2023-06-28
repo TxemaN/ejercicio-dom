@@ -1,0 +1,67 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%
+}
+
+.recuadro {
+    border: 1px dotted black;
+}
+
+
+
+.titular {
+    margin-top: 1%;
+}
+
+#dondeIr {
+    width: 99%;
+}
+
+.flexContainer {
+
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+
+
+.flexContainer>* {
+
+    width: 100%;
+
+}
+
+/*IPAD, que dejo también con tres*/
+@media screen and (min-width: 768px) {
+    .flexContainer {
+        flex-wrap: nowrap;
+
+    }
+
+    .flexContainer>* {
+        width: 33%;
+
+
+    }
+}
+
+@media screen and (min-width: 922px) {
+    .flexContainer {
+        flex-wrap: nowrap;
+
+    }
+
+    .flexContainer>* {
+        width: 33%;
+
+    }
+}
