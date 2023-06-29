@@ -52,16 +52,12 @@ const arrayBanners = [{
 {
     url: "assets/7.jpg",
     alt: "cabecera seis",
-},
-
-
-]
+},]
 
 const pintarBanner = () => {
     let indice = Math.floor(Math.random() * arrayBanners.length);
     banner.src = arrayBanners[indice].url;
 }
-
 
 const pintarCards = () => {
 
@@ -78,32 +74,28 @@ const pintarCards = () => {
         imagen.src = item.url;
         imagen.alt = item.alt;
         imagen.id = item.id;
-        
+
         imagen.addEventListener('click', (ev) => {
             let fotoViaje1 = document.querySelector("#fotoViaje1");
             let fotoViaje2 = document.querySelector("#fotoViaje2");
             let fotoViaje3 = document.querySelector("#fotoViaje3");
-            if(ev.target == fotoViaje1){
+            if (ev.target == fotoViaje1) {
                 fotoViaje1.classList.add("fotoViaje");
                 fotoViaje2.classList.remove("fotoViaje");
                 fotoViaje3.classList.remove("fotoViaje");
-                }
-                else if (ev.target == fotoViaje2){
-                    fotoViaje2.classList.add("fotoViaje");
-                    fotoViaje1.classList.remove("fotoViaje");
-                    fotoViaje3.classList.remove("fotoViaje");
-                    } 
-                    else if (ev.target == fotoViaje3){
-                        fotoViaje3.classList.add("fotoViaje");
-                        fotoViaje1.classList.remove("fotoViaje");
-                        fotoViaje2.classList.remove("fotoViaje");
-                        } 
             }
-
+            else if (ev.target == fotoViaje2) {
+                fotoViaje2.classList.add("fotoViaje");
+                fotoViaje1.classList.remove("fotoViaje");
+                fotoViaje3.classList.remove("fotoViaje");
+            }
+            else if (ev.target == fotoViaje3) {
+                fotoViaje3.classList.add("fotoViaje");
+                fotoViaje1.classList.remove("fotoViaje");
+                fotoViaje2.classList.remove("fotoViaje");
+            }
+        }
         );
-
-
-
         const descripcion = document.createElement("P");
         descripcion.textContent = item.msg;
         const titulo = document.createElement("H3");
