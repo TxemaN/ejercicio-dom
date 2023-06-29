@@ -12,12 +12,23 @@ img {
     border: 1px dotted black;
 }
 
+.fotoViaje {
+    border: 3px dotted rgb(218, 12, 12);
+}
+
 .titular {
     margin-top: 1%;
 }
 
 #dondeIr {
     width: 99%;
+}
+
+.grid-container.main>* {
+    display: grid;
+    grid-template-rows: auto auto;
+    gap: 5px;
+    align-content: center;
 }
 
 .flexContainer {
@@ -36,6 +47,7 @@ img {
 
 /*IPAD, que dejo también con tres*/
 @media screen and (min-width: 768px) {
+
     .flexContainer {
         flex-wrap: nowrap;
     }
@@ -46,6 +58,7 @@ img {
 }
 
 @media screen and (min-width: 922px) {
+
     .flexContainer {
         flex-wrap: nowrap;
     }

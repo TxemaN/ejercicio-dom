@@ -1,7 +1,9 @@
 const contenedorViajes = document.querySelector("#contenedor-viajes");
 const contenedorCabecera = document.querySelector("#cabecera")
-const banner=document.querySelector("#banner img");
+const banner = document.querySelector("#banner img");
 const fragment = document.createDocumentFragment();
+
+
 
 const arrayViajes = [{
     url: "assets/viajes-1.jpg",
@@ -14,6 +16,7 @@ const arrayViajes = [{
     titulo: "Viaje uno",
     alt: " cabaña sobre el agua",
     msg: "La peculiaridad de este trozo de texto en latín es que no tiene sentido alguno. El texto está hecho con el propósito de no distraer al usuario/diseñador. Primero por estar en latín, idioma desconocido para casi toda la población mundial.",
+
 }
     ,
 {
@@ -26,34 +29,34 @@ const arrayViajes = [{
 const arrayBanners = [{
     url: "assets/cacota.jpg",
     alt: "cabecera uno",
-}, 
+},
 {
     url: "assets/3.jpg",
     alt: "cabecera dos",
-}, 
+},
 {
     url: "assets/4.jpg",
     alt: "cabecera tres",
-}, 
+},
 {
     url: "assets/5.jpg",
     alt: "cabecera cuatro",
-}, 
+},
 {
     url: "assets/6.jpg",
     alt: "cabecera cinco",
-}, 
+},
 {
     url: "assets/7.jpg",
     alt: "cabecera seis",
-}, 
+},
 
 
 ]
 
 const pintarBanner = () => {
-let indice =Math.floor(Math.random ()* arrayBanners.length) ; 
-    banner.src =  arrayBanners[indice].url;
+    let indice = Math.floor(Math.random() * arrayBanners.length);
+    banner.src = arrayBanners[indice].url;
 }
 
 
@@ -62,16 +65,26 @@ const pintarCards = () => {
     arrayViajes.forEach((item) => {
         const cajaFoto = document.createElement("FIGURE");
         cajaFoto.classList.add('recuadro');
+
+
         const caja = document.createElement("DIV");
 
         const imagen = document.createElement("IMG");
         imagen.src = item.url;
         imagen.alt = item.alt;
+
+        imagen.addEventListener('mouseenter', () => {
+            imagen.classList.add('fotoViaje');
+        });
+        imagen.addEventListener('mouseleave', () => {
+            imagen.classList.remove('fotoViaje');
+        });
+        
+
         const descripcion = document.createElement("P");
         descripcion.textContent = item.msg;
         const titulo = document.createElement("H3");
         titulo.textContent = item.titulo;
-
         caja.append(imagen);
         cajaFoto.append(caja, titulo, descripcion);
 
@@ -79,6 +92,9 @@ const pintarCards = () => {
 
     })
     contenedorViajes.append(fragment);
+
 }
+
 pintarBanner();
-pintarCards()
+pintarCards();
+
